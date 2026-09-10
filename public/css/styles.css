@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f6f8; }
+header { text-align: center; margin-bottom: 30px; }
+.container { max-width: 800px; margin: 0 auto; }
+.card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.hidden { display: none; }
+input, textarea, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+button { background-color: #0066cc; color: white; border: none; border-radius: 4px; cursor: pointer; }
+button:hover { background-color: #0052a3; }
+.comment-item { border-bottom: 1px solid #eee; padding: 10px 0; }

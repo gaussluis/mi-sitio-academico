@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Académica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <h1>Portal de Recursos Académicos</h1>
+        <div id="auth-status"></div>
+    </header>
+
+    <main class="container">
+        <!-- Registro / Login -->
+        <section id="auth-section" class="card">
+            <h2>Acceso a Alumnos</h2>
+            <form id="auth-form">
+                <input type="text" id="nombre" placeholder="Nombre completo (solo para registro)">
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <div class="buttons">
+                    <button type="button" id="btn-login">Iniciar Sesión</button>
+                    <button type="button" id="btn-signup">Registrarse</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Materiales Académicos -->
+        <section id="materials-section" class="card hidden">
+            <h2>Materiales Disponibles</h2>
+            <div class="material-card">
+                <h3>Guía de Algoritmos y Criptografía</h3>
+                <p>Monto: $250.00 MXN</p>
+                <button onclick="buyMaterial('Guía de Algoritmos y Criptografía', 250)">Adquirir Material</button>
+            </div>
+        </section>
+
+        <!-- Comentarios -->
+        <section id="comments-section" class="card hidden">
+            <h2>Dudas y Comentarios</h2>
+            <form id="comment-form">
+                <textarea id="mensaje" placeholder="Escribe tu duda o comentario..." required></textarea>
+                <button type="submit">Enviar Comentario</button>
+            </form>
+            <div id="comments-list"></div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
