@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma Académica</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://js.stripe.com/v3/"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma Académica</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Portal de Recursos Académicos</h1>
-        <div id="auth-status"></div>
-    </header>
 
-    <main class="container">
-        <!-- Registro / Login -->
-        <section id="auth-section" class="card">
-            <h2>Acceso a Alumnos</h2>
-            <form id="auth-form">
-                <input type="text" id="nombre" placeholder="Nombre completo (solo para registro)">
-                <input type="email" id="email" placeholder="Correo electrónico" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <div class="buttons">
-                    <button type="button" id="btn-login">Iniciar Sesión</button>
-                    <button type="button" id="btn-signup">Registrarse</button>
-                </div>
-            </form>
-        </section>
+  <!-- Barra de Navegación -->
+  <nav class="navbar">
+    <div class="nav-brand">Mi Plataforma</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#investigacion">Investigación</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
 
-        <!-- Materiales Académicos -->
-        <section id="materials-section" class="card hidden">
-            <h2>Materiales Disponibles</h2>
-            <div class="material-card">
-                <h3>Guía de Algoritmos y Criptografía</h3>
-                <p>Monto: $250.00 MXN</p>
-                <button onclick="buyMaterial('Guía de Algoritmos y Criptografía', 250)">Adquirir Material</button>
-            </div>
-        </section>
+  <!-- Sección Home / Perfil -->
+  <section id="home" class="hero-section">
+    <div class="profile-card">
+      <img src="img/perfil.jpg" alt="Foto de perfil" class="profile-img">
+      <div class="profile-info">
+        <h1>Dr. José Luis López Maldonado</h1>
+        <p class="bio-text">
+          Doctor en Ingeniería de Sistemas por el IPN. Docente e investigador especializado en encriptación de imágenes mediante teoría del caos, curvas elípticas y redes neuronales deep learning, con amplia experiencia en desarrollo de sistemas web y mecatrónica.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Comentarios -->
-        <section id="comments-section" class="card hidden">
-            <h2>Dudas y Comentarios</h2>
-            <form id="comment-form">
-                <textarea id="mensaje" placeholder="Escribe tu duda o comentario..." required></textarea>
-                <button type="submit">Enviar Comentario</button>
-            </form>
-            <div id="comments-list"></div>
-        </section>
-    </main>
+  <!-- Sección Investigación -->
+  <section id="investigacion" class="content-section">
+    <h2>Investigación</h2>
+    <p>Líneas de investigación centradas en algoritmos simétricos de cifrado, cajas dinámicas y seguridad en la nube.</p>
+  </section>
 
-    <script src="js/main.js"></script>
+  <!-- Sección Cursos -->
+  <section id="cursos" class="content-section gray-bg">
+    <h2>Cursos Disponibles</h2>
+    <div id="courses-list">
+      <!-- Aquí se renderizan los cursos con Stripe -->
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="content-section">
+    <h2>Contacto</h2>
+    <p>¿Tienes dudas o deseas colaborar en algún proyecto? Envíame un mensaje.</p>
+  </section>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
