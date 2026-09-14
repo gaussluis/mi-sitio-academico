@@ -6,6 +6,7 @@ const cors = require('cors');
 const userRouter = require('./routes/userRoutes');
 const commentRouter = require('./routes/commentRoutes');
 const paymentRouter = require('./routes/paymentRoutes');
+const contactRouter = require('./routes/contactRoutes'); // <- Agregar esta línea
 
 // 2. Inicializar la aplicación Express
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/comments', commentRouter);
 app.use('/api/v1/payments', paymentRouter);
+app.use('/api/v1/contact', contactRouter); // <- Registrar esta ruta
 
 // Ruta básica de salud
 app.get('/api/v1/health', (req, res) => {
