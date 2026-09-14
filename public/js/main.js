@@ -143,3 +143,16 @@ async function sendContactForm(e) {
         responseDiv.classList.remove('hidden');
     }
 }
+
+// Detectar pago exitoso desde Stripe
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (urlParams.get('payment') === 'success') {
+        alert('¡Pago realizado con éxito! Gracias por tu compra.');
+        
+        // Limpia el parámetro de la URL
+        const cleanUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+    }
+});
