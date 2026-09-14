@@ -28,9 +28,24 @@
             <div class="profile-info">
                 <h1>Dr. José Luis López Maldonado</h1>
                 <p class="bio-text">
-                    Doctor en Ingeniería de Sistemas por el IPN. Docente e investigador especializado en encriptación de
-                    imágenes mediante teoría del caos, curvas elípticas y redes neuronales deep learning, con amplia
-                    experiencia en desarrollo de sistemas web y mecatrónica.
+                    Doctor en Ingeniería de Sistemas y Maestro en Tecnología
+                    de Cómputo por el Instituto Politécnico Nacional (IPN), e Ingeniero en Sistemas Electrónicos
+                    Industriales por la Universidad Autonoma de la Ciudad de México (UACM). Mi trayectoria combina la
+                    docencia universitaria y la investigación científica en tecnologías de la información.<br><br>
+
+                    Actualmente realizo una estancia posdoctoral en CIDETEC-IPN, donde investigo el cifrado inteligente
+                    de imágenes mediante redes neuronales y criptografía avanzada, con enfoque en seguridad informática
+                    y protección de datos.<br><br>
+
+                    Cuento con experiencia docente en el área de Ingeniería de Software. Entre los cursos que he
+                    impartido se encuentran Fundamentos e Introducción a la Programación, Estructuras de Datos, Análisis
+                    de Algoritmos, Teoría de la Computación, Matemáticas Discretas, XML, Sistemas Web, Node.js y Bases
+                    de Datos. Asimismo, cuento con experiencia en el desarrollo de software utilizando tecnologías como
+                    C, Python, Java, JavaScript, SQL, Node.js y Express.<br><br>
+
+                    Mi interés principal es desarrollar soluciones tecnológicas que integren inteligencia artificial,
+                    criptografía y seguridad de la información, así como contribuir a la formación de nuevas
+                    generaciones de profesionales en tecnología.
                 </p>
             </div>
         </div>
@@ -40,14 +55,53 @@
     <section id="investigacion" class="content-section">
         <h2>Investigación</h2>
         <p>Líneas de investigación centradas en algoritmos simétricos de cifrado, cajas dinámicas y seguridad en la
-            nube.</p>
+            nube.<br><br>
+            La investigación más reciente se centra en el cifrado de imágenes a color mediante la combinación de
+            técnicas de inteligencia artificial, particularmente redes neuronales convolucionales, y S-boxes dinámicas.
+            Actualmente, esta investigación se encuentra en proceso de publicación.<br><br>
+
+            La primera investigación desarrollada se enfocó en el cifrado de imágenes mediante un algoritmo simétrico
+            basado en la combinación de caos, curvas elípticas, cajas dinámicas y permutaciones variables. Esta
+            investigación fue publicada en diciembre de 2024 bajo el título “Symmetric Algorithm for Image Encryption
+            Formulated in Chaos, Elliptic Curve, Dynamic Boxes and Variable Permutations”.<br>
+
+            <a href="https://doi.org/10.5377/nexo.v37i2.19796" target="_blank">Consultar Investigación</a>
+
+        </p>
     </section>
 
     <!-- Sección Cursos -->
     <section id="cursos" class="content-section gray-bg">
-        <h2>Cursos Disponibles</h2>
-        <div id="courses-list">
-            <!-- Aquí se renderizan los cursos con Stripe -->
+        <h2>Cursos y Capacitación</h2>
+        <p>Programas de formación especializada en ciencias de la computación, seguridad y desarrollo de software.</p>
+
+        <div class="courses-grid">
+            <!-- Tarjeta Curso 1 -->
+            <div class="card course-card">
+                <h3>Criptografía Moderna y Sistemas Caóticos</h3>
+                <p class="course-desc">Aprende sobre cifrado simétrico, curvas elípticas y teoría del caos aplicada a la
+                    protección de datos e imágenes.</p>
+                <span class="course-price">$1,200 MXN</span>
+                <button onclick="checkout('course_1')">Inscribirme / Comprar</button>
+            </div>
+
+            <!-- Tarjeta Curso 2 -->
+            <div class="card course-card">
+                <h3>Programación Estructurada y Algoritmos en C</h3>
+                <p class="course-desc">Desde fundamentos de lógica y manejo de memoria hasta análisis de algoritmos y
+                    estructuras de datos.</p>
+                <span class="course-price">$400 MXN/Hora clase</span>
+                <button onclick="checkout('course_2')">Inscribirme / Comprar</button>
+            </div>
+
+            <!-- Tarjeta Curso 3 -->
+            <div class="card course-card">
+                <h3>Inteligencia Artificial Aplicada a la Ciberseguridad</h3>
+                <p class="course-desc">Uso de redes neuronales convolucionales y modelos Deep Learning para la seguridad
+                    en entornos distribuidos.</p>
+                <span class="course-price">$1,500 MXN</span>
+                <button onclick="checkout('course_3')">Inscribirme / Comprar</button>
+            </div>
         </div>
     </section>
 
@@ -57,6 +111,7 @@
             <h2>Contacto</h2>
             <p>¿Tienes dudas, sugerencias o deseas colaborar en algún proyecto de investigación? Envíame un mensaje.</p>
 
+            <!-- Formulario de Contacto -->
             <form id="contact-form">
                 <label for="contact-name">Nombre completo</label>
                 <input type="text" id="contact-name" placeholder="Tu nombre" required>
@@ -65,14 +120,45 @@
                 <input type="email" id="contact-email" placeholder="tu@correo.com" required>
 
                 <label for="contact-message">Mensaje</label>
-                <textarea id="contact-message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <textarea id="contact-message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
 
                 <button type="submit">Enviar Mensaje</button>
             </form>
             <div id="contact-response" class="hidden"></div>
+
+            <hr class="divider">
+
+            <!-- Redes Sociales después del formulario con Logos -->
+            <h3 class="social-title">O si prefieres, contáctame en redes sociales:</h3>
+            <div class="social-links">
+                <!-- WhatsApp con SVG Corregido -->
+                <!-- WhatsApp Corregido Nítido -->
+                <a href="https://wa.me/525643249580" target="_blank" class="social-btn whatsapp">
+                    <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp" class="social-icon"
+                        style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
+                    WhatsApp
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/gaussluis2026" target="_blank" class="social-btn telegram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
+                    </svg>
+                    Telegram
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/maldonado.joseluislopez" target="_blank" class="social-btn instagram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    Instagram
+                </a>
+            </div>
         </div>
     </section>
-
     <script src="js/main.js"></script>
 </body>
 
