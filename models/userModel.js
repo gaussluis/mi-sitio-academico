@@ -26,11 +26,10 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-// Encriptar contraseña antes de guardar el documento
-userSchema.pre('save', async function(next) {
-    if (!this.isModified('password')) return next();
+// Encriptar contraseña antes de guardar (Sintaxis async limpia para Mongoose moderna)
+userSchema.pre('save', async function() {
+    if (!this.isModified('password')) return;
     this.password = await bcrypt.hash(this.password, 12);
-    next();
 });
 
 // Método para verificar credenciales en el login
