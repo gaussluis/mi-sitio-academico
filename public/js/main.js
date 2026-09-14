@@ -80,23 +80,35 @@ async function sendComment(e) {
     }
 }
 
-async function buyMaterial(materialName, amount) {
-    const res = await fetch('/api/v1/payments/checkout-session', {
-        method: 'POST',
-        headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ materialName, amount })
-    });
-
-    const data = await res.json();
-    if (data.status === 'success') {
-        window.location.href = data.session.url;
-    } else {
-        alert('Error al iniciar el pago: ' + data.message);
+// Expuesta globalmente en window para que el onclick del HTML la encuentre
+window.buyMaterial = async function(materialName, amount) {
+    if (!token) {
+        alert('Debes iniciar sesión para inscribirte a un curso.');
+        return;
     }
-}
+
+    try {
+        const res = await fetch('/api/v1/payments/checkout-session', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ materialName, amount })
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.status === 'success') {
+            window.location.href = data.session.url;
+        } else {
+            alert('Error al iniciar el pago: ' + (data.message || 'Error del servidor'));
+        }
+    } catch (error) {
+        console.error('Error en la petición de pago:', error);
+        alert('No se pudo conectar con el servidor de pagos.');
+    }
+};
 
 async function sendContactForm(e) {
     e.preventDefault();
