@@ -9,46 +9,62 @@ const signToken = (id) => {
 
 exports.signup = async (req, res, next) => {
     try {
+        const { nombre, email, password } = req.body;
+
         const newUser = await User.create({
-            nombre: req.body.nombre,
-            email: req.body.email,
-            password: req.body.password
+            nombre,
+            email,
+            password
         });
 
         const token = signToken(newUser._id);
 
-        res.status(201).json({
+        return res.status(201).json({
             status: 'success',
             token,
             data: { user: newUser }
         });
     } catch (err) {
-        res.status(400).json({ status: 'fail', message: err.message });
+        console.error('Error en signup:', err);
+        return res.status(400).json({
+            status: 'fail',
+            message: err.message || 'Error al registrar usuario'
+        });
     }
 };
 
-exports.login = async (req, res) => {
+exports.login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
 
         if (!email || !password) {
-            return res.status(400).json({ status: 'fail', message: 'Por favor proporciona email y contraseña' });
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Por favor proporciona email y contraseña'
+            });
         }
 
         const user = await User.findOne({ email }).select('+password');
 
         if (!user || !(await user.correctPassword(password, user.password))) {
-            return res.status(401).json({ status: 'fail', message: 'Email o contraseña incorrectos' });
+            return res.status(401).json({
+                status: 'fail',
+                message: 'Email o contraseña incorrectos'
+            });
         }
 
         const token = signToken(user._id);
 
-        res.status(200).json({
+        return res.status(200).json({
             status: 'success',
             token
         });
     } catch (err) {
-        res.status(400).json({ status: 'fail', message: err.message });
+        console.error('Error en login:', err);
+        return res.status(400).json({
+            status: 'fail',
+            message: err.message || 'Error al iniciar sesión'
+        });
     }
 };
 
